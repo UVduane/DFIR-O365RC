@@ -1,4 +1,4 @@
-﻿
+
 Function Get-O365Full {
 
     <#
@@ -24,9 +24,9 @@ Function Get-O365Full {
     #>
     
     param (
-        [Parameter(Mandatory = $false, ParameterSetName="byrecordtype")]
+        [Parameter(Mandatory = $false)]
         [System.Array]$RecordTypes = ("ExchangeAdmin", "ExchangeItem","ExchangeItemGroup","SharePoint","SyntheticProbe","SharePointFileOperation","OneDrive","DataCenterSecurityCmdlet","ComplianceDLPSharePoint","Sway","ComplianceDLPExchange","SharePointSharingOperation","SkypeForBusinessPSTNUsage","SkypeForBusinessUsersBlocked","SecurityComplianceCenterEOPCmdlet","ExchangeAggregatedOperation","PowerBIAudit","CRM","Yammer","SkypeForBusinessCmdlets","Discovery","MicrosoftTeams","ThreatIntelligence","MailSubmission","MicrosoftFlow","AeD","MicrosoftStream","ComplianceDLPSharePointClassification","ThreatFinder","Project","SharePointListOperation","SharePointCommentOperation","DataGovernance","Kaizala","SecurityComplianceAlerts","ThreatIntelligenceUrl","SecurityComplianceInsights","MIPLabel","WorkplaceAnalytics","PowerAppsApp","PowerAppsPlan","ThreatIntelligenceAtpContent","LabelContentExplorer","TeamsHealthcare","ExchangeItemAggregated","HygieneEvent","DataInsightsRestApiAudit","InformationBarrierPolicyApplication","SharePointListItemOperation","SharePointContentTypeOperation","SharePointFieldOperation","MicrosoftTeamsAdmin","HRSignal","MicrosoftTeamsDevice","MicrosoftTeamsAnalytics","InformationWorkerProtection","Campaign","DLPEndpoint","AirInvestigation","Quarantine","MicrosoftForms","ApplicationAudit","ComplianceSupervisionExchange","CustomerKeyServiceEncryption","OfficeNative","MipAutoLabelSharePointItem","MipAutoLabelSharePointPolicyLocation","MicrosoftTeamsShifts","MipAutoLabelExchangeItem","CortanaBriefing","Search","WDATPAlerts","MDATPAudit","AzureActiveDirectory","AzureActiveDirectoryAccountLogon","AzureActiveDirectoryStsLogon","AirManualInvestigation","SecurityComplianceRBAC","AirAdminActionInvestigation","MSTIC","MCASAlerts","OnPremisesFileShareScannerDlp","OnPremisesSharePointScannerDlp","ExchangeSearch","SharePointSearch","SecurityComplianceUserChange","ComplianceDLPExchangeClassification"),
-        [Parameter(Mandatory = $false, ParameterSetName="byrecordset")]
+        [Parameter(Mandatory = $false)]
         [ValidateSet("All","AllbutAzureAD","ExchangeOnly","SharePointOnly","AzureADOnly")] 
         [String]$RecordSet = "All",
         [Parameter(Mandatory = $true)]
@@ -34,7 +34,7 @@ Function Get-O365Full {
         [Parameter(Mandatory = $true)]
         [DateTime]$StartDate,
         [Parameter(Mandatory = $false)]
-        [boolean]$DeviceCode=$false,
+        [boolean]$DeviceCode = $false,
         [Parameter(Mandatory = $false)]
         [String]$logfile = "Get-O365Full.log"
     )
